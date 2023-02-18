@@ -7,7 +7,19 @@ export default defineConfig({
   layout: 'home',
   themeConfig: {
     socialLinks: [{ icon: 'github', link: 'https://github.com/imondo/tea-kit' }],
+    nav: [
+      { text: '指南', link: '/guide/' },
+      { text: '组件', link: '/components/button' }
+    ],
     sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            { text: '介绍', link: '/guide/' },
+          ]
+        },
+      ],
       '/components/': [
         {
           text: '基本组件',

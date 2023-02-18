@@ -1,5 +1,5 @@
 <template>
-    <button class="tea-button">按钮</button>
+    <button class="t-button">按钮</button>
 </template>
 <script setup lang="ts">
 

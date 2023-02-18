@@ -23,8 +23,10 @@ importers:
 
   packages/components:
     specifiers:
+      '@tea-kit/utils': workspace:^1.0.0
       vue: ^3.2.47
     dependencies:
+      '@tea-kit/utils': link:../utils
       vue: registry.npmmirror.com/vue/3.2.47
 
   packages/ui:

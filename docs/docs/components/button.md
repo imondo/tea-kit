@@ -5,6 +5,10 @@
 ```vue
 <template>
   <tea-button>Default</tea-button>
+  <tea-button type="primary">primary</tea-button>
+  <tea-button type="success">success</tea-button>
+  <tea-button type="danger">danger</tea-button>
+  <tea-button type="warning">warning</tea-button>
 </template>
 ```
 

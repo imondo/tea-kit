@@ -1,0 +1,23 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --port 8090",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.46",
+    "vitepress-theme-demoblock": "^2.0.2",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "@tea-kit/ui": "workspace:^1.0.0"
+  }
+}
+

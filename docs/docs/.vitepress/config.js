@@ -22,7 +22,7 @@ export default defineConfig({
       ],
       '/components/': [
         {
-          text: '基本组件',
+          text: '基础组件',
           items: [
             { text: 'Button 按钮', link: '/components/button' },
           ]

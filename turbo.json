@@ -16,6 +16,9 @@
     },
     "docs:dev": {
       "dependsOn": ["build"]
+    },
+    "docs:build": {
+      "dependsOn": ["build"]
     }
   }
 }

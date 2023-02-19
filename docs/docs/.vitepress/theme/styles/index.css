@@ -22,7 +22,3 @@ html.dark {
 html.dark {
   --vp-code-block-bg: var(--vp-c-bg-alt);
 }
-
-.demo-block .xl-button {
-  margin: 0 10px 10px 0;
-}

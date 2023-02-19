@@ -1,6 +1,7 @@
-import { TeaButton } from '@tea-kit/components'
+import { TeaButton, TeaCheckbox } from '@tea-kit/components'
 import type { Plugin } from 'vue'
 
 export default [
-  TeaButton
+  TeaButton,
+  TeaCheckbox
 ] as Plugin[]

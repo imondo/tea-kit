@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import TeaUI from '@tea-kit/ui'
 import '@tea-kit/ui/styles/button.less'
+import '@tea-kit/ui/styles/checkbox.less'
 
 import './styles/index.css'
 

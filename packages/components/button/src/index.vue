@@ -4,10 +4,7 @@
     </button>
 </template>
 <script setup lang="ts">
-import utils from '@tea-kit/utils'
 import { ref } from 'vue'
-console.log(utils.type({}))
-
 type BtnTypes = 'default' | 'primary' | 'danger' | 'warning' | 'success'
 
 const props = defineProps<{

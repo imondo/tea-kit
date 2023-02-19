@@ -10,11 +10,11 @@
 
 ```vue
 <template>
-  <tea-button>Default</tea-button>
-  <tea-button type="primary">primary</tea-button>
-  <tea-button type="success">success</tea-button>
-  <tea-button type="danger">danger</tea-button>
-  <tea-button type="warning">warning</tea-button>
+  <tea-button>春江</tea-button>
+  <tea-button type="primary">潮水</tea-button>
+  <tea-button type="success">海上</tea-button>
+  <tea-button type="danger">明月</tea-button>
+  <tea-button type="warning">江天一色</tea-button>
 </template>
 ```
 :::

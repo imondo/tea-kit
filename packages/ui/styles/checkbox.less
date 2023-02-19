@@ -14,7 +14,7 @@
         width: 14px;
         height: 14px;
         text-align: center;
-        line-height: 14px;
+        line-height: 11px;
         color: #fff;
         border: 1px solid @color;
         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -32,11 +32,17 @@
     &.is-checked-text {
         color: @activeColor;
     }
+
+    &:hover {
+        .check-icon {
+            border-color: @activeColor;
+        }
+    }
 }
 
 .checkbox-wrap-button {
     font-size: 14px;
-    padding: 5px 10px;
+    padding: 10px 12px;
     margin: 0;
     line-height: 1;
     font-weight: 500;
@@ -59,6 +65,6 @@
         color: #fff;
         background-color: @activeColor;
         border-color: @activeColor;
-        box-shadow: -1px 0 0 0 #8cc5ff;
+        box-shadow: -1px 0 0 0 @successColor;
     }
 }

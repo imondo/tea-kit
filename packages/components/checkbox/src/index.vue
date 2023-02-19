@@ -10,7 +10,7 @@
   </label>
 </template>
 <script setup lang="ts">
-import { defineEmits } from 'vue';
+import { defineEmits } from "vue";
 import { useCheckbox } from "./useCheckbox";
 const props = defineProps<{
   modelValue: {
@@ -22,13 +22,15 @@ const props = defineProps<{
   };
 }>();
 const emit = defineEmits<{
-  (event: "change", value: boolean, e: Event): void;
+  (event: "change", value: boolean, e: Event): void,
+  (event: 'update:modelValue', val: any): void
 }>();
-const { isBtn, model, isChecked } = useCheckbox(props);
+
+const { isBtn, model, isChecked } = useCheckbox(props, emit);
 
 const onChange = (event: Event) => {
-  const target = event.target as HTMLInputElement
-  const value = target?.checked ? true : false;
+  const target = event.target as HTMLInputElement;
+  const value = target?.checked;
   emit("change", value, event);
 };
 </script>

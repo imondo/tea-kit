@@ -32,7 +32,6 @@
         <tea-checkbox :label="3">夜来风雨声</tea-checkbox>
         <tea-checkbox :label="4">花落知多少</tea-checkbox>
     </tea-checkbox-group>
-    <span>checkList: {{ checkList }}</span>
 </template>
 <script lang="ts" setup>
     import { ref, watch } from 'vue';
@@ -44,9 +43,9 @@
 ```
 :::
 
-## 按钮样式
+## 线框样式
 
-按钮样式的多选组合。
+线框样式的多选组合。
 
 :::demo
 ```vue
@@ -68,8 +67,16 @@
 ```
 :::
 
-## Attributes
+## Checkbox Attributes
 
-| 参数    | 说明   | 类型    | 可选值                                             | 默认值  |
-| ------- | ------ | ------- | -------------------------------------------------- | ------- |
-| type    | 类型   | string  | primary / success / warning / danger / default | default |
+| 参数 | 说明   | 类型     | 可选值 | 默认值  |
+| ------- | ------ | ------- | ----| ------- |
+| v-model| 绑定值   | string / number / boolean| ——| —— |
+| label    | 选中状态的值| string / number / boolean| ——| —— |
+
+## Checkbox-group Attributes
+
+| 参数 | 说明   | 类型     | 可选值 | 默认值  |
+| ------- | ------ | ------- | ----| ------- |
+| v-model| 绑定值   | array| ——| —— |
+| border| 线框样式 | boolean| true / false| false |

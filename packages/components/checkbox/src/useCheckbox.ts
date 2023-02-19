@@ -1,4 +1,4 @@
-import { computed, inject, watch, defineEmits, ComputedRef } from 'vue';
+import { computed, inject, ComputedRef } from 'vue';
 import { type, hasOwn } from '@tea-kit/utils';
 
 interface ICheckProps {
@@ -34,22 +34,16 @@ export const useCheckboxGroup = (): ICheckGroup => {
   };
 };
 
-export const useCheckbox = (props: any): ICheckbox => {
+export const useCheckbox = (props: any, emit: any): ICheckbox => {
   const { isGroup, checkboxGroup, isBtnStyle } = useCheckboxGroup();
-
-  const emit = defineEmits<{
-    (event: 'update:modelValue', val: any): void
-  }>()
 
   const store = computed(() =>
     checkboxGroup ? checkboxGroup?.modelValue.value : props.modelValue
   );
 
   const model = computed({
-    get() {
-      return isGroup.value ? store.value : props.modelValue;
-    },
-    set(val) {
+    get: () => (isGroup.value ? store.value : props.modelValue),
+    set: (val) => {
       if (isGroup.value && Array.isArray(val)) {
         checkboxGroup.changeEvent(val);
       } else {
@@ -65,12 +59,8 @@ export const useCheckbox = (props: any): ICheckbox => {
     } else if (type(value) === 'array') {
       return value.includes(props.label);
     }
-    return false;
+    return null;
   });
-
-  watch(isChecked, (val) => {
-    console.log(val)
-  })
 
   return {
     isBtn: isBtnStyle,

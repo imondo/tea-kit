@@ -7,9 +7,11 @@
 import { ref } from 'vue'
 type BtnTypes = 'default' | 'primary' | 'danger' | 'warning' | 'success'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     type: BtnTypes
-}>()
+}>(), {
+    type: 'default'
+})
 
 const typeName = ref(`t-btn--${props.type}`)
 </script>

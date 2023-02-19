@@ -4,7 +4,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed, nextTick, provide, toRefs, defineEmits } from "vue";
+import { computed, nextTick, provide, defineEmits } from "vue";
 const emit = defineEmits<{
     (event: "update:modelValue", val: any): void;
     (event: "change", val: any): void;

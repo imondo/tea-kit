@@ -11,7 +11,7 @@
       :link="state.link"
       :blank="state.blank"
       :url="state.imgUrl"
-      :alt="state.imgAlt"
+      :alt="state.alt"
       :width="state.width"
       :height="state.height"
       :mag-width="state.magWidth"
@@ -29,11 +29,16 @@ const state = reactive({
   blank: true,
   width: 426,
   height: 282,
-  magWidth: 426,
-  magHeight: 426,
+  magWidth: 100,
+  magHeight: 100,
   alt: '城市'
 });
 </script>
+<style>
+.wrapper {
+  position: relative;
+}
+</style>
 
 ```
 

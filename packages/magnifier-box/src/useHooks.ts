@@ -1,9 +1,8 @@
 import { getStyle } from '@tea-kit/utils'
-export default (el: HTMLElement)  => {
-  console.log(el);
+export default (el: HTMLElement) => {
   const oImgWrap = el;
-  const oMagWrap = oImgWrap.querySelector('.mag-wrap') as HTMLElement;
-  const oMagImg = oMagWrap.querySelector('.mag-img') as HTMLElement;
+  const oMagWrap = oImgWrap.querySelector('.tea-mag-wrap') as HTMLElement;
+  const oMagImg = oMagWrap.querySelector('.tea-mag-img') as HTMLElement;
   const imgWidth = getStyle(oImgWrap, 'width');
   const imgHeight = getStyle(oImgWrap, 'height');
   const magWidth = getStyle(oMagWrap, 'width');
@@ -18,8 +17,8 @@ export default (el: HTMLElement)  => {
   function bindEvent() {
     oImgWrap.addEventListener(
       'mouseover',
-      function(e) {
-        oMagWrap.className += ' show';
+      function (e) {
+        oMagWrap.className += ' tea-mag-wrap__show';
         const { x, y, mouseX, mouseY } = getXY(e);
         showMag(x, y, mouseX, mouseY);
         document.addEventListener('mousemove', handleMouseMove, false);
@@ -36,7 +35,7 @@ export default (el: HTMLElement)  => {
   }
 
   function handleMouseOut() {
-    oMagWrap.className = 'mag-wrap';
+    oMagWrap.className = 'tea-mag-wrap';
     document.removeEventListener('mousemove', handleMouseMove, false);
   }
 
@@ -45,19 +44,26 @@ export default (el: HTMLElement)  => {
     oMagWrap.style.top = y + 'px';
     oMagImg.style.left = -x + 'px';
     oMagImg.style.top = -y + 'px';
-    console.log(mouseX)
     if (mouseX < 0 || mouseY < 0 || mouseX > imgWidth || mouseY > imgHeight) {
-      oMagWrap.className = 'mag-wrap';
+      oMagWrap.className = 'tea-mag-wrap';
       document.removeEventListener('mousemove', handleMouseMove, false);
     }
   }
 
   function getXY(e: HTMLElement) {
+    const { pageX, pageY } = e;
+    const img = oMagImg.getBoundingClientRect();
+    const x = pageX - img.left - (magWidth / 2);
+    const y = pageY - img.top - (magHeight / 2);
+
+    const mouseX = pageX - img.left;
+    const mouseY = pageY - img.top;
+
     return {
-      x: e.pageX - imgX - magWidth / 2,
-      y: e.pageY - imgY - magHeight / 2,
-      mouseX: e.pageX - imgX,
-      mouseY: e.pageY - imgY
+      x,
+      y,
+      mouseX,
+      mouseY
     };
   }
 

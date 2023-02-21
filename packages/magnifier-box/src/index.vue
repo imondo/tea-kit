@@ -1,14 +1,14 @@
 <template>
   <div
     ref="magnifier"
-    class="magnifier-wrap"
+    class="tea-magnifier-wrap"
     :style="{
       width: width + 'px',
       height: height + 'px'
     }"
   >
     <a
-      class="mag-wrap"
+      class="tea-mag-wrap"
       :href="link"
       :target="blank ? '_blank' : ''"
       :style="{
@@ -17,7 +17,7 @@
       }"
     >
       <img
-        class="mag-img"
+        class="tea-mag-img"
         :src="url"
         :alt="alt"
         :style="{
@@ -31,7 +31,7 @@
       :href="link"
     >
       <img
-        class="static-img"
+        class="tea-static-img"
         :src="url"
         :alt="alt"
       />
@@ -61,24 +61,22 @@ withDefaults(defineProps<{
 
 const magnifier = ref();
 
-onMounted(() => {
-  nextTick(() => {
-    useHooks(magnifier.value)
-  })
+nextTick(() => {
+  useHooks(magnifier.value);
 })
 </script>
 
 <style lang="less" scoped>
-.magnifier-wrap {
+.tea-magnifier-wrap {
   position: relative;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px #999;
 
-  .static-img {
+  .tea-static-img {
     width: 100%;
   }
 
-  .mag-wrap {
+  .tea-mag-wrap {
     display: none;
     position: absolute;
     top: 0;
@@ -90,12 +88,12 @@ onMounted(() => {
     cursor: move;
     overflow: hidden;
 
-    &.show {
+    &__show {
       display: block;
       transform: scale(1.5);
     }
 
-    .mag-img {
+    .tea-mag-img {
       position: absolute;
       top: 0;
       left: 0;

@@ -17,7 +17,7 @@
     "vue": "3.2.44"
   },
   "dependencies": {
+    "@tea-kit/magnifier-box": "workspace:^1.0.0",
     "@tea-kit/ui": "workspace:^1.0.0"
   }
 }
-

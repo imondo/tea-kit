@@ -28,6 +28,12 @@ export default defineConfig({
             { text: 'Checkbox 多选框', link: '/components/checkbox' },
           ]
         },
+        {
+          text: '个性组件',
+          items: [
+            { text: 'Magnifier 放大镜', link: '/components/magnifier' },
+          ]
+        },
       ]
     }
   },

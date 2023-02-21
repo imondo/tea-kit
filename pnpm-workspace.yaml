@@ -2,3 +2,4 @@ packages:
   - packages/* # ui 库 工具库等相关库
   - docs # 文档
   - apps/* # 应用
+  - example # 示例

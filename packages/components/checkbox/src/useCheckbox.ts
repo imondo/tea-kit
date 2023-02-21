@@ -1,5 +1,5 @@
 import { computed, inject, ComputedRef } from 'vue';
-import { type, hasOwn } from '@tea-kit/utils';
+import { isPropType, hasOwn } from '@tea-kit/utils';
 
 interface ICheckProps {
   name: string;
@@ -54,9 +54,9 @@ export const useCheckbox = (props: any, emit: any): ICheckbox => {
 
   const isChecked = computed(() => {
     const value = model.value;
-    if (type(value) === 'boolean') {
+    if (isPropType(value) === 'boolean') {
       return value;
-    } else if (type(value) === 'array') {
+    } else if (isPropType(value) === 'array') {
       return value.includes(props.label);
     }
     return null;

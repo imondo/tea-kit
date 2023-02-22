@@ -1,14 +1,12 @@
 import { getStyle } from '@tea-kit/utils'
-export default (el: HTMLElement) => {
+export default (el: HTMLEmbedElement) => {
   const oImgWrap = el;
-  const oMagWrap = oImgWrap.querySelector('.tea-mag-wrap') as HTMLElement;
-  const oMagImg = oMagWrap.querySelector('.tea-mag-img') as HTMLElement;
-  const imgWidth = getStyle(oImgWrap, 'width');
-  const imgHeight = getStyle(oImgWrap, 'height');
-  const magWidth = getStyle(oMagWrap, 'width');
-  const magHeight = getStyle(oMagWrap, 'height');
-  const imgX = oImgWrap.offsetLeft;
-  const imgY = oImgWrap.offsetTop;
+  const oMagWrap = oImgWrap.querySelector('.tea-mag-wrap') as HTMLEmbedElement;
+  const oMagImg = oMagWrap.querySelector('.tea-mag-img') as HTMLEmbedElement;
+  const imgWidth = getStyle(oImgWrap, 'width') as number;
+  const imgHeight = getStyle(oImgWrap, 'height') as number;
+  const magWidth = getStyle(oMagWrap, 'width') as number;
+  const magHeight = getStyle(oMagWrap, 'height') as number;
 
   const init = () => {
     bindEvent();
@@ -17,7 +15,7 @@ export default (el: HTMLElement) => {
   function bindEvent() {
     oImgWrap.addEventListener(
       'mouseover',
-      function (e) {
+      (e: MouseEvent) => {
         oMagWrap.className += ' tea-mag-wrap__show';
         const { x, y, mouseX, mouseY } = getXY(e);
         showMag(x, y, mouseX, mouseY);
@@ -29,7 +27,7 @@ export default (el: HTMLElement) => {
     oImgWrap.addEventListener('mouseout', handleMouseOut, false);
   }
 
-  function handleMouseMove(e) {
+  function handleMouseMove(e: MouseEvent) {
     const { x, y, mouseX, mouseY } = getXY(e);
     showMag(x, y, mouseX, mouseY);
   }
@@ -50,14 +48,14 @@ export default (el: HTMLElement) => {
     }
   }
 
-  function getXY(e: HTMLElement) {
+  function getXY(e: MouseEvent) {
     const { pageX, pageY } = e;
-    const img = oMagImg.getBoundingClientRect();
-    const x = pageX - img.left - (magWidth / 2);
-    const y = pageY - img.top - (magHeight / 2);
+    const { left, top } = oImgWrap.getBoundingClientRect();
+    const x = pageX - left - (magWidth / 2);
+    const y = pageY - top - (magHeight / 2);
 
-    const mouseX = pageX - img.left;
-    const mouseY = pageY - img.top;
+    const mouseX = pageX - left;
+    const mouseY = pageY - top;
 
     return {
       x,

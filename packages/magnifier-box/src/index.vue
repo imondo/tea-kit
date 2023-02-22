@@ -88,6 +88,11 @@ nextTick(() => {
     cursor: move;
     overflow: hidden;
 
+    img {
+      width: initial;
+      max-width: initial;
+    }
+
     &__show {
       display: block;
       transform: scale(1.5);

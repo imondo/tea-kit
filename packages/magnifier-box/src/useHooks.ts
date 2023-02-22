@@ -1,5 +1,5 @@
 import { getStyle } from '@tea-kit/utils'
-export default (el: HTMLEmbedElement) => {
+export default (el: Element) => {
   const oImgWrap = el;
   const oMagWrap = oImgWrap.querySelector('.tea-mag-wrap') as HTMLEmbedElement;
   const oMagImg = oMagWrap.querySelector('.tea-mag-img') as HTMLEmbedElement;
@@ -15,7 +15,7 @@ export default (el: HTMLEmbedElement) => {
   function bindEvent() {
     oImgWrap.addEventListener(
       'mouseover',
-      (e: MouseEvent) => {
+      (e: Event) => {
         oMagWrap.className += ' tea-mag-wrap__show';
         const { x, y, mouseX, mouseY } = getXY(e);
         showMag(x, y, mouseX, mouseY);
@@ -48,8 +48,8 @@ export default (el: HTMLEmbedElement) => {
     }
   }
 
-  function getXY(e: MouseEvent) {
-    const { pageX, pageY } = e;
+  function getXY(e: Event) {
+    const { pageX, pageY } = e as MouseEvent;
     const { left, top } = oImgWrap.getBoundingClientRect();
     const x = pageX - left - (magWidth / 2);
     const y = pageY - top - (magHeight / 2);

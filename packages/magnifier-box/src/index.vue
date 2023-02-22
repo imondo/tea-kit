@@ -18,7 +18,7 @@
     >
       <img
         class="tea-mag-img"
-        :src="url"
+        :src="src"
         :alt="alt"
         :style="{
           width: width + 'px',
@@ -32,7 +32,7 @@
     >
       <img
         class="tea-static-img"
-        :src="url"
+        :src="src"
         :alt="alt"
       />
     </a>
@@ -49,7 +49,7 @@ withDefaults(defineProps<{
   magHeight: number,
   blank: boolean,
   link: string,
-  url: string,
+  src: string,
   alt: string
 }>(), {
   width: 375,
@@ -61,9 +61,13 @@ withDefaults(defineProps<{
 
 const magnifier = ref();
 
-nextTick(() => {
-  useHooks(magnifier.value);
+onMounted(() => {
+  nextTick(() => {
+    useHooks(magnifier.value);
+  })
 })
+
+
 </script>
 
 <style lang="less" scoped>

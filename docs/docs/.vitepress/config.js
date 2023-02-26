@@ -7,11 +7,11 @@ export default defineConfig({
   layout: 'home',
   head: [
     [
-      'link',{ rel: 'icon', href: '/favicon.png' }
+      'link',{ rel: 'icon', href: '/imgs/favicon.png' }
     ]
   ],
   themeConfig: {
-    logo: '/tea.svg',
+    logo: '/imgs/tea.svg',
     socialLinks: [{ icon: 'github', link: 'https://github.com/imondo/tea-kit' }],
     nav: [
       { text: '指南', link: '/guide/' },

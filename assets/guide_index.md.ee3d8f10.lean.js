@@ -1,1 +1,0 @@
-import{_ as e,c as r,o as t,e as o}from"./app.d3ef2748.js";const m=JSON.parse('{"title":"指南","description":"","frontmatter":{},"headers":[],"relativePath":"guide/index.md"}'),a={name:"guide/index.md"},n=o("",3),_=[n];function s(i,d,c,p,h,l){return t(),r("div",null,_)}const f=e(a,[["render",s]]);export{m as __pageData,f as default};

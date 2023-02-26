@@ -5,6 +5,9 @@ hero:
   name: tea-kit
   text: 做一个可以喝的杯具
   tagline: 大杂烩技术
+  image:
+    src: /tea.svg
+    alt: logo
   actions:
     - theme: brand
       text: 喝点啥

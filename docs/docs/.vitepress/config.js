@@ -5,7 +5,13 @@ export default defineConfig({
   base: '/tea-kit/',
   title: '杯具',
   layout: 'home',
+  head: [
+    [
+      'link',{ rel: 'icon', href: '/favicon.png' }
+    ]
+  ],
   themeConfig: {
+    logo: '/tea.svg',
     socialLinks: [{ icon: 'github', link: 'https://github.com/imondo/tea-kit' }],
     nav: [
       { text: '指南', link: '/guide/' },

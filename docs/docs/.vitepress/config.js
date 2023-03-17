@@ -38,6 +38,7 @@ export default defineConfig({
           text: '个性组件',
           items: [
             { text: 'Magnifier 放大镜', link: '/components/magnifier' },
+            { text: 'Watermark 水印', link: '/components/watermark' },
           ]
         },
       ]

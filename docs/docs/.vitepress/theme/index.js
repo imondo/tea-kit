@@ -6,6 +6,8 @@ import '@tea-kit/ui/styles/checkbox.less'
 import TeaMagnifier from '@tea-kit/magnifier-box'
 import '@tea-kit/magnifier-box/dist/index.css'
 
+import TeaWatermark from '@tea-kit/watermark'
+
 import './styles/index.css'
 
 // 显示 Demo 组件
@@ -18,6 +20,7 @@ export default {
   enhanceApp({ app }) {
     app.use(TeaUI)
     app.use(TeaMagnifier)
+    app.use(TeaWatermark)
     app.component('Demo', Demo)
     app.component('DemoBlock', DemoBlock)
   }

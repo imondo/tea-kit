@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@tea-kit/magnifier-box": "workspace:^1.0.0",
-    "@tea-kit/ui": "workspace:^1.0.0"
+    "@tea-kit/ui": "workspace:^1.0.0",
+    "@tea-kit/watermark": "workspace:^0.0.0"
   }
 }

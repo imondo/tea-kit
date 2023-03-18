@@ -42,7 +42,7 @@ const setWatermark = ({ text, rotate = -45, fontSize = 14, opacity = '0.4', zInd
 
   // 修改画布在容器中的偏移，使其中心位置与容器的中心位置永远保持一致
   // 在旋转角度时也要以其中心点为中心进行旋转
-  if (!el) {
+  if (fullscreen) {
     canvas.style.position = 'fixed';
   } else {
     canvas.style.position = 'absolute';

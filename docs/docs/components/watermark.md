@@ -10,24 +10,37 @@
 
 ```vue
 <template>
-  <tea-watermark text="我的" color="#666">
+  <tea-watermark text="李白" color="#666">
     <table>
       <thead>
         <tr>
-          <th>快点</th>
-          <th>下班</th>
-          <th>/</th>
-          <th>我要</th>
-          <th>下班</th>
+          <th colspan="4">把酒问月·故人贾淳令予问之</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>疯狂</td>
-          <td>星期五</td>
-          <td> / </td>
-          <td>明天</td>
-          <td>星期六</td>
+          <td>青天有月来几时？</td>
+          <td>我今停杯一问之。</td>
+          <td>人攀明月不可得</td>
+          <td>月行却与人相随。</td>
+        </tr>
+        <tr>
+          <td>皎如飞镜临丹阙</td>
+          <td>绿烟灭尽清辉发</td>
+          <td>但见宵从海上来</td>
+          <td>宁知晓向云间没</td>
+        </tr>
+        <tr>
+          <td>白兔捣药秋复春</td>
+          <td>嫦娥孤栖与谁邻？</td>
+          <td>今人不见古时月</td>
+          <td>今月曾经照古人。</td>
+        </tr>
+        <tr>
+          <td>古人今人若流水</td>
+          <td>共看明月皆如此</td>
+          <td>唯愿当歌对酒时</td>
+          <td>月光长照金樽里</td>
         </tr>
       </tbody>
     </table>
@@ -51,8 +64,8 @@ import { reactive, toRefs } from 'vue';
 ```vue
 <template>
   <div>
-    <tea-checkbox v-model="fullscreen">要全屏吗</tea-checkbox>
-    <tea-watermark v-if="fullscreen" text="快点下班" color="#666" fullscreen></tea-watermark>
+    <tea-checkbox v-model="fullscreen">眼里都是你</tea-checkbox>
+    <tea-watermark v-if="fullscreen" text="盈盈一水间，脉脉不得语" color="#666" fullscreen></tea-watermark>
   </div>
 </template>
 
